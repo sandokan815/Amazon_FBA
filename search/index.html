@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="/css/content.css" rel="stylesheet" />
+    <link href="/vendor/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/css/buttoncss/gobutton.css" rel="stylesheet" />
+    <link href="/css/PriceSliderCSS/simple-slider.css" rel="stylesheet" />
+    <title>Search Results</title>
+
+</head>
+<body>
+
+    <div id="maincontainer" class="full-height">
+
+        <!-- ****************************** Header ****************************** -->
+        <div id="header" class="bodyblock">
+
+            <a href="#" id="backlink">« back</a>
+            <img class="logoimage" src="img/logo.svg" />
+            <div class="headerwithcountry">
+
+                    <div id="flags">
+                        <div class="flag" data-country="co.uk" title="Search on Amazon.co.uk"><img src="img/flag-co.uk.jpg" /><span>co.uk</span></div>
+                         <div class="flag" data-country="com" title="Search on Amazon.com"><img src="img/flag-com.jpg" /><span>com</span></div>
+                        <div class="flag" data-country="de" title="Search on Amazon.de"><img src="img/flag-de.jpg" /><span>de</span></div>
+                        <div class="flag" data-country="fr" title="Search on Amazon.fr"><img src="img/flag-fr.jpg" /><span>fr</span></div>
+                        <div class="flag" data-country="es" title="Search on Amazon.es"><img src="img/flag-es.jpg" /><span>es</span></div>
+                        <div class="flag" data-country="it" title="Search on Amazon.it"><img src="img/flag-it.jpg" /><span>it</span></div>
+                    </div>
+
+                    <small class="d-block"><strong>Search results for:</strong></small>            
+
+                    <div class="input-group">
+                        <input id="txtKeyword" type="text" class="form-control form-control-sm fs-12" placeholder="Search again...">
+                        <div class="input-group-append">
+                            <button id="btnSearch" class="btn btn-outline-secondary fs-12" type="button" title="Search">GO</button>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+
+        <div id="MainBody" class="full-height-no-header">
+
+            <!-- ****************************** SEARCH BODY ****************************** -->
+            <div id="SearchBody">
+
+                <!-- ****************************** SearchBox ****************************** -->
+                
+
+                <!-- ****************************** Search Results ****************************** -->
+
+                <div id="lstSearchResults" class="container">
+
+                </div>
+
+            </div>
+
+            <div class="CalculatorSection" style="display:none;">
+            
+            <div  class="rwizard-panel restriction-wizard-container gradient-2">
+            	<div class="rwizard-calc-form">
+            		<div class="rw-col-12"> 
+            			<label id="discVoucher">Voucher Disc:&nbsp&nbsp</label>
+            			<div class="rw-row">
+            				<div class="rw-col-12">
+            					<input id="priceSlider" type="text" data-slider="true" data-slider-highlight="true" data-slider-range="0,100">
+            				</div>
+            			</div>
+            		</div>
+            		<div class="rw-col-12">
+            			<div class="rw-col-12"> 
+            		<label>Buy Price:</label>
+            		<div class="rw-row">
+            			<div class="rw-col-3" style="width: 18%"> 
+            				<select  style="width: 60px;" id="CurrencySelect"><option value="EUR">&euro;</option><option value="GBP">&pound;</option><option value="USD">&dollar;</option></select>
+            			</div>
+            			<div class="rw-col-9" style="width:60% !important"> 
+            				<input id="buypriceinput" class="CalculateInput" style="margin: 0;"  type="text">
+            			</div>
+            			<div class="rw-col-3" style="width: 18%"> 
+            				<label>QTY:</label>
+            				<div class="rw-row"> 
+            					<input id="BuyPriceQuant"  class="CalculateInput" style="margin: 0;" value="1" type="text">
+            				</div>
+            			</div>
+            		</div>
+            	</div>	
+            </div>
+            	<div class="rw-col-12"> 
+            		<label>Sell Price:</label> 
+            		<input id="SellPrice"  class="CalculateInput" type="text">
+            	</div>
+            	<div class="rw-col-2" style="margin-left: 8px;"> 
+            		<label data-bind="text: FBAORFBM"> </label> 
+            	</div>
+            </div> 
+            <button class="rwizard-round-button calculateprofitimg"  style="width:46%"></button><hr class="hrclass">
+            <div class="row">
+            	<div  class="column">
+            		<div class="efn-switch-wrapper"> 
+            			<label>EFN</label><div id="efnSwitch" class="rwizard-switch"><div class="rwizard-helper"></div></div></div>
+            	</div>
+            	<div class="column">
+            	<div class="efn-switch-wrapper"> 
+            		<label>FBM</label>
+            		<div id="fbmSwitch"  class="rwizard-switch">
+            			<div class="rwizard-helper"></div>
+            		</div>
+            	</div>
+            </div>
+            <div class="column">
+            	<label style="margin-top:2px;">
+            		<label >P&P &nbsp<input type="text"  placeholder="Shipping" name="ShippingA" id="ShippingA" style="width: 35px;height:19px;position: relative;border:2px solid green; border-radius:13px" >
+            		</label>
+            	</label>
+            </div>
+        </div>
+        <hr class="hrclass">
+            <div id="FBA_Section" class="rwizard-calc-results rwizard-rank-data">
+            <label class="collapsible">FBA Fees Breakdown</label>
+            <span class="content_collapsible" style="max-height: 0px;">
+            <span>
+            	Referral Fee:&nbsp;
+            	<span class="currencySign"></span>
+            	<span id="FBA_referralFee"></span>
+            </span> 
+              
+              <span>
+              	<br>FBA Fees:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_fbaFee"></span>
+              </span>
+              <span>
+              	<br>VAT On Fees:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_vatOnFees"></span>
+              </span>
+              <span>
+              	<br>Flat Rate VAT:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_FlatRate"></span>
+              </span> 
+              <span>
+              	<br>EFN Fees:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_efnFee"></span>
+              </span> 
+              <span>
+              	<br>Sales Tax:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_salesTax"></span>
+              </span>
+              <span>
+              	<br>Fixed Prep. Fee:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_prepFeeFixed"></span>
+              </span>
+              <span>
+              	<br>Transit Cost:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_transitCost"></span>
+              </span>
+              <span>
+              	<br>FBA Fees adjustment:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_feeAdjustment"></span>
+              </span>
+              <span>
+              	<br>Net VAT To Be Remitted:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_netVatToBeRemitted"></span>
+              </span>
+            	<br>
+            </span>
+            	<span>
+              	<br> Total Fees:&nbsp;
+              	<span class="currencySign"></span>
+              	<span id="FBA_totalFees"></span>
+              </span>
+               <span>
+               	<br><br> Your profit is:&nbsp;
+               	<span>
+               		<span class="currencySign"></span>
+               		<span id="FBA_profit"></span>
+               	</span>
+               </span>
+            	<span>
+            		<br>Your ROI:&nbsp;
+            		<span>
+            			<span id="FBA_roi"></span> %
+            		</span>
+            	</span>
+            	<span>
+            		<br> Profit Margin:&nbsp;
+            		<span>
+            			<span id="FBA_profitMargin"></span> %
+            		</span>
+            	</span>
+            	<span>
+            		<br> Breakeven Price:&nbsp;
+            		<span>
+            			<span class="currencySign"></span>
+            			<span id="FBA_breakeven"></span>
+            		</span>
+            	</span>
+            	</div>
+            
+            
+            
+            <div id="FBM_Section" class="rwizard-calc-results rwizard-rank-data"><label class="collapsible">FBM Fees Breakdown</label>
+            <span class="content_collapsible" style="max-height: 0px;">
+            	<span>Referral Fee:&nbsp;<span class="currencySign"></span><span id="FBM_referralFee"></span> </span>
+            	<span><br>Variable Fees:&nbsp;<span class="currencySign"></span><span id="FBM_fbmVariableFee"></span></span>  
+            	<span><br>VAT On Fees:&nbsp;<span class="currencySign"></span><span id="FBM_vatOnFees"></span></span>
+            	<span ><br>FBM Shipping :&nbsp;<span class="currencySign"></span><span id="FBM_shipPrice"></span></span>
+            	<span ><br>Flat Rate VAT:&nbsp;<span class="currencySign"></span><span id="FBM_FlatRate"></span></span></span>
+            	<span ><br>Sales Tax:&nbsp;<span class="currencySign"></span><span id="FBM_salesTax"></span></span></span>
+            <span><br> Total Fees:&nbsp;<span class="currencySign"></span><span id="FBM_totalFees"></span></span> 
+            <span ><br><br> Your profit is:&nbsp;<span ><span class="currencySign"></span><span id="FBM_profit"></span></span></span>
+            <span ><br>Your ROI:&nbsp;<span ><span id="FBM_roi"></span> %</span></span>
+            <span><br> Profit Margin:&nbsp;<span id="FBM_profitMargin"></span> %</span>
+            <span><br> Breakeven Price:&nbsp;<span class="currencySign"></span><span id="FBM_breakeven"></span></span><br></div></div>
+            </div>
+            
+
+        </div>
+
+    </div>
+<!--<div id="FBM_Section" class="rwizard-calc-results rwizard-rank-data"><label class="collapsible">FBM Fees Breakdown</label><span class="content_collapsible" style="max-height: 0px;">
+            Referral Fee:&nbsp;<span class="currencySign"></span><span id="FBM_referralFee"></span> 
+            <span><br>EFN Fees:&nbsp;<span class="currencySign"></span><span id="FBM_efnFee"></span></span> 
+            <span><br>Variable Fees:&nbsp;<span class="currencySign"></span><span id="FBM_fbmVariableFee"></span></span> <span ><br>Fixed Prep. Fee:&nbsp;<span class="currencySign"></span><span id="FBM_fixedPrepFee"></span></span> <span><br>Transit Cost:&nbsp;<span class="currencySign"></span><span id="FBM_transitCost"></span></span> <span ><br>Inbound Shipping:&nbsp;<span class="currencySign"></span><span id="FBM_inboundShipping"></span></span> <span ><br>FBA Fees adjustment:&nbsp;<span class="currencySign"></span><span id="FBM_fbaFeeAdjustment"></span></span> <span ><br>EFN Fees adjustment:&nbsp;<span class="currencySign"></span><span id="FBM_efnFeeAdjustment"></span></span> <span><br>VAT On Fees:&nbsp;<span class="currencySign"></span><span id="FBM_vatOnFees"></span></span><span ><br>FBM Shipping :&nbsp;<span class="currencySign"></span><span id="FBM_shipPrice"></span></span><span ><br>Flat Rate VAT:&nbsp;<span class="currencySign"></span><span id="FBM_FlatRate"></span></span> <span ><br>Net VAT To Be Remitted:&nbsp;<span class="currencySign"></span><span id="FBM_vatToRemit"></span></span></span><br> Total Fees:&nbsp;<span class="currencySign"></span><span id="FBM_totalFees"></span> <span ><br>Sales Tax:&nbsp;<span class="currencySign"></span><span id="FBM_salesTax"></span></span><br><br> Your profit is:&nbsp;<span ><span class="currencySign"></span><span id="FBM_profit"></span></span><span ><br>Profit Adjusted to<span class="currencySign"></span><span id="FBM_profitAdj"></span></span> <br>Your ROI:&nbsp;<span ><span id="FBM_roi"></span> %</span><br> Profit Margin:&nbsp;<span id="FBM_profitMargin"></span> %<br> Breakeven Price:&nbsp;<span class="currencySign"></span><span id="FBM_breakeven"></span><br></div></div>
+            </div>-->
+</body>
+
+    <script src="/vendor/jquery.js"></script>
+    <script src="/vendor/bootstrap/popper.min.js"></script>
+    <script src="/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="/vendor/jquery.checkable.min.js"></script>
+	<script src="/js/PriceSliderJS/simple-slider.js"></script>
+    <script src="js/main.js"></script>
+
+</html>

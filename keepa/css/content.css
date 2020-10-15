@@ -1,0 +1,22 @@
+﻿#FBAMTKeepaCloseButton {
+
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-align: center;
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    z-index: 9999;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+    #FBAMTKeepaCloseButton:hover {
+        color: white;
+    }

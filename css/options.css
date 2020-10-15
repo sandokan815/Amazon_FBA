@@ -1,0 +1,55 @@
+.sortl{
+	width :50%;
+	margin-bottom: 3%;
+	text-align: left;
+}
+.exportsort{
+width: 40%;
+    margin-bottom: 3%;
+}
+.sortl1{
+width :80%;
+	margin-bottom: 3%;
+	text-align: left;
+}
+
+label {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+input[type=text],
+input[type=number] {
+  box-sizing: border-box;
+}
+
+.config {
+  width: 70%;
+  margin: auto;
+}
+
+#tabs {
+  background-color: transparent;
+  border: none;
+}
+
+#tabs .ui-tabs-nav {
+  background-color: transparent;
+}
+
+#tabs .ui-tabs-nav {
+  height: 2.35em;
+  text-align: center;
+}
+
+#tabs .ui-tabs-nav li {
+  display: inline-block;
+  float: none;
+  margin: 0 5px 0 0;
+  border-radius: 6px;
+  border: none;
+}
+
+#tabs .ui-tabs-nav li a:focus {
+    outline: none;
+}

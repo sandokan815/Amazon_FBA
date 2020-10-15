@@ -1,0 +1,44 @@
+{
+   "background": {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "persistent": true,
+      "scripts": [ "vendor/jquery.js", "js/bg.js", "search/js/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "img/icon16.png",
+      "default_popup": "html/popup.html",
+      "default_title": "Click here to open menu"
+   },
+   "content_scripts": [ {
+      "css": [ "css/content.css", "vendor/jquery-ui/jquery-ui.min.css", "css/buttoncss/gobutton.css", "css/PriceSliderCSS/simple-slider.css" ],
+      "exclude_globs": [ "*://app.*", "*://*johnfrancis*", "http://sellercentral.*", "https://sellercentral.*", "*://*xero*", "*://*tradingview*", "*://*netflix*" ],
+      "js": [ "vendor/jquery.js", "js/fontawesome.js", "vendor/jquery-ui/jquery-ui.min.js", "vendor/knockout-3.4.2.js", "js/content.js", "html2canvas-master/dist/html2canvas.js", "js/code/highcharts.js", "js/code/modules/exporting.js", "js/code/modules/boost.js", "js/code/modules/export-data.js", "js/code/modules/heatmap.js", "js/code/canvj/canvj.js", "js/buttonjs/gobutton.js", "js/PriceSliderJS/simple-slider.js" ],
+      "matches": [ "https://www.amazon.co.uk/*dp/*", "https://www.amazon.com/*dp/*", "https://www.amazon.de/*dp/*", "https://www.amazon.it/*dp/*", "https://www.amazon.fr/*dp/*", "https://www.amazon.co.uk/gp/product/*", "https://www.amazon.com/gp/product/*", "https://www.amazon.de/gp/product/*", "https://www.amazon.it/gp/product/*", "https://www.amazon.fr/gp/product/*", "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "exclude_globs": [ "*://app.*", "*://*johnfrancis*", "http://sellercentral.*", "https://sellercentral.*", "*://*xero*", "*://*tradingview*", "*://*netflix*" ],
+      "js": [ "vendor/jquery.js", "js/fontawesome.js", "vendor/jquery-ui/jquery-ui.min.js", "vendor/knockout-3.4.2.js", "js/content.js", "html2canvas-master/dist/html2canvas.js", "js/code/highcharts.js", "js/code/modules/exporting.js", "js/code/modules/boost.js", "js/code/modules/export-data.js", "js/code/modules/heatmap.js", "js/code/canvj/canvj.js", "js/buttonjs/gobutton.js", "js/PriceSliderJS/simple-slider.js" ],
+      "matches": [ "https://www.amazon.co.uk/*dp/*", "https://www.amazon.com/*dp/*", "https://www.amazon.de/*dp/*", "https://www.amazon.it/*dp/*", "https://www.amazon.fr/*dp/*", "https://www.amazon.co.uk/gp/product/*", "https://www.amazon.com/gp/product/*", "https://www.amazon.de/gp/product/*", "https://www.amazon.it/gp/product/*", "https://www.amazon.fr/gp/product/*", "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Tool for Amazon FBA – Restriction & Hazmat Checker, Calculator, Keepa Sales, Current Prices, EU Marketplace Display + Much More",
+   "differential_fingerprint": "1.bbc37816b94dc8f9e66977de6dcb6dc42238071f0b089c1f7ffc5f9b6b8b2a01",
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp3O6TMfIcaHoITNE0vEXuZIUueHp4ewQwiEUoXhFHCz1kWUek6vihgrOkheDiUeQn4gF0q0erThUl5LRG6BoEj5uwA1YEKNwTu2p141y9G5/BBN+F1MpVRpubhqQnkbg1MTt7p2oh/Dw7+6S1CpYejaqq83ldQK8/HyrQ6cSnKoHn1un1vnyag/b3uqQ01mi6buaDkVxWx7YNuOy68+aXW5Un32wFdZBBXEVqtXsNQh1NgJbtaziHkmlpyrObhO7xhMrZAa/tYI6wka6BSrw5AQVRmuid99da275d4RQcAn6l25aLGy7rcDeX5O2Ie2rpq9m1mSI0Ka2c5k+OW5vrwIDAQAB",
+   "manifest_version": 2,
+   "name": "FBA Multi-Tool Restriction, Calculator + More",
+   "oauth2": {
+      "client_id": "63071023557-0rdlf3eth4b5fssa2numbqfdle7tc6lt.apps.googleusercontent.com",
+      "scopes": [ "https://www.googleapis.com/auth/spreadsheets" ]
+   },
+   "options_page": "html/options.html",
+   "permissions": [ "storage", "tabs", "identity", "unlimitedStorage", "contextMenus", "activeTab", "\u003Call_urls>", "cookies", "http://*/*", "https://*/*", "webRequest", "webRequestBlocking" ],
+   "short_name": "FMT",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.02",
+   "web_accessible_resources": [ "img/*", "vendor/jquery-ui/images/*", "*" ]
+}

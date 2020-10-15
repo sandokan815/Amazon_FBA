@@ -1,0 +1,535 @@
+	<!doctype html><html lang="en"><head><meta
+charset="utf-8"><title>FBA Mutli-tool - Settings</title><link
+rel="stylesheet" href="../css/content.css"/><link rel="stylesheet"
+href="../css/options.css"/><link rel="stylesheet"
+href="../vendor/jquery-ui/jquery-ui.min.css"/><link rel="stylesheet"
+href="../vendor/jquery-ui/theme.css"/><script
+src="../vendor/jquery.js"></script><script
+src="../vendor/jquery-ui/jquery-ui.min.js"></script><script
+src="../vendor/jquery.checkable.min.js"></script><script
+src="../js/options.js"></script>
+<style>
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+.loaderOptionPage {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+      left: 43%;
+    top: 48%;
+    height: 120px;
+	z-index: 9;
+	display:none;
+    position: absolute;
+  -webkit-animation: spinOptionPage 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spinOptionPage {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spinOptionPage {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head><body class="wizard"><div
+class="restriction-wizard-container rwizard-panel
+rwizard-options-container"> <img src="../img/logo.svg"/><br><br><div
+id="tabs"><ul><li> <a href="#tabs-1">General</a></li><li> <a
+href="#tabs-2">Europe</a></li><li> <a
+href="#tabs-3">US</a></li>
+<li> <a href="#tabs-4">Export</a></li><li> <a href="#tabs-5">Deal Analyser</a></li><li> <a href="#tabs-6">MWS KEYS</a></li></ul><div id="tabs-1"> <label>Fee
+adjustment (%)</label><br/> <input type="number" id="fee-adjustment"
+value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01"/><br/>
+<label>Profit adjustment (%)</label><br/> <input type="number"
+id="profit-adjustment" value="" value=""
+pattern="[0-9]+([\.,][0-9]+)?" step="0.01"/><br/> <label>Fixed Prep.
+Fee</label><br/> <input type="number" id="fixed-prep-fee" value=""
+value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01"/><br/>
+<label>Fixed transit cost</label><br/> <input type="number"
+id="transit-cost" value="" pattern="[0-9]+([\.,][0-9]+)?"
+step="0.01"/><br/><!--<div> <label class="sortl1">Auto Hazmat</label><div
+id="auto-hazmat" class="rwizard-switch12"><div
+class="rwizard-helper"></div></div></div>--><br>
+<div id="ToBeHidden">
+<label>License Code</label><br/> <input
+type="text" id="LicenseCodeTest" value="" value=""/><br/>
+<button type="button" value="Test" id="TestLicense">Test</button></div>
+<!--<label>License Code</label><br/> <input
+type="text" id="NewLicenseCode" value="" value=""/><br/>
+<button type="button" value="Test" id="NewLicenseCodeButton">Upgrade</button>-->
+<div><br> <label class="sortl1">Right Click Search</label><div
+id="highlighttext" class="rwizard-switch12"><div
+class="rwizard-helper"></div></div></div>
+<div> <label class="sortl1">Result Page Calculator</label><div
+id="ResultPageCalculator" class="rwizard-switch12"><div
+class="rwizard-helper"></div></div></div>
+<div> <label class="sortl1">Stock Checker</label><div
+id="DisableStockChecker" class="rwizard-switch12"><div
+class="rwizard-helper"></div></div></div>
+<div> <label class="sortl1">History Data Graph</label><div
+id="historydatagraph" class="rwizard-switch12"><div
+class="rwizard-helper"></div></div></div>
+<div> <label class="sortl1">Buy Box Rotation History</label><div
+id="BuyBoxGraph" class="rwizard-switch12"><div
+class="rwizard-helper"></div></div></div>
+
+<div> <label class="sortl1">Product Variation</label><div
+id="ProductVariation" class="rwizard-switch12"><div
+class="rwizard-helper"></div></div></div>
+
+<!--<br/> <label>Google Sheet
+URL</label><br/> <input type="text" id="spreadsheet-url"
+value=""/><br/>-->
+</div><div id="tabs-2"> <label>EFN fee adjustment
+(%)</label><br/> <input type="number" id="efn-adjustment" value=""
+value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01"/><br/>
+<label>Fixed inbound shipping per kilogram</label><br/> <input
+type="number" id="inbound-shipping" value="" value=""
+pattern="[0-9]+([\.,][0-9]+)?" step="0.01"/><br/> <br>
+<label>VAT %</label><br/> <input type="number" id="vat-rate" value=""pattern="[0-9]+([\.,][0-9]+)?" step="1"/><br/>
+<div> 
+	<label class="sortl1">VAT Registered</label>
+	<div id="vat-registered" class="rwizard-switch12">
+		<div class="rwizard-helper">
+		</div>
+	</div>
+</div><div> 
+	<label class="sortl1">Buy Price Excluding VAT (MT Adds VAT to Buy Price):</label>
+	<div id="vat-BuyPrice" class="rwizard-switch12">
+		<div class="rwizard-helper">
+		</div>
+	</div>
+</div>
+<div> 
+	<label class="sortl1">Flat Rate Vat Scheme:</label>
+	<div id="vat-FlatRate" class="rwizard-switch12">
+		<div class="rwizard-helper">
+		</div>
+	</div>
+</div><br/>
+</div><div id="tabs-3">
+<label>Fixed inbound shipping per pound (US)</label><br/> <input
+type="number" id="inbound-shipping-us" value="" value=""
+pattern="[0-9]+([\.,][0-9]+)?" step="0.01"/><br/> <label>Sales Tax
+%</label><br/> <input type="number" id="tax-rate" value=""
+pattern="[0-9]+([\.,][0-9]+)?" step="1"/><br/></div>
+<div id="tabs-4">
+<label>Google Sheet
+URL</label><br/> <input type="text" id="spreadsheet-url"
+value=""/><br/>
+<label>Google sheet tab name ( case sensitive)</label><br/> <input type="text" id="googleSheetName" placeholder="sheet tab name (Case Sensitive) "/><br/><br/>
+<label class="sortl">ASIN:</label>&nbsp&nbsp&nbsp<select id="asinsel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+
+</select><br/> 
+<label class="sortl">Amazon Title:</label>&nbsp&nbsp&nbsp<select id="namesel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+
+</select><br/>
+<label class="sortl">Category:</label>&nbsp&nbsp&nbsp<select id="catsel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select><br/>
+<label  class="sortl">Rank:</label>&nbsp&nbsp&nbsp<select id="ranksel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select ><br/>
+<label class="sortl">Total Fees:</label>&nbsp&nbsp&nbsp<select id="feessel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select><br/>
+<label class="sortl">Profit:</label>&nbsp&nbsp&nbsp<select id="profitsel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select><br/>
+<label class="sortl">ROI:</label>&nbsp&nbsp&nbsp<select id="riosel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select><br/>
+<label class="sortl">Profit Margin:</label>&nbsp&nbsp&nbsp<select id="pmarginsel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select>
+<br/>
+<label class="sortl">Breakeven price:</label>&nbsp&nbsp&nbsp<select id="bevensel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select><br/>
+<label class="sortl">Weight:</label>&nbsp&nbsp&nbsp<select id="weightsel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select><br/>
+<label class="sortl">Store Name:</label>&nbsp&nbsp&nbsp<select id="storeurlsel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+</select><br/>
+<label class="sortl">Buy Price:</label>&nbsp&nbsp&nbsp<select id="bpricesel"  class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select><br/>
+<label class="sortl">Sell Price:</label>&nbsp&nbsp&nbsp<select id="spricesel" class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+
+</select><br/>
+<label class="sortl">Estimated Sales:</label>&nbsp&nbsp&nbsp<select id="estsales" class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+</select><br/>
+
+<label class="sortl">Amazon Url:</label>&nbsp&nbsp&nbsp<select id="amazonLink" class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+</select><br/>
+
+<label class="sortl">Store Url:</label>&nbsp&nbsp&nbsp<select id="storeLink" class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+</select><br/>
+<label class="sortl">Export Date:</label>&nbsp&nbsp&nbsp<select id="DateOfExport" class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+</select><br/>
+<label class="sortl">Quantity:</label>&nbsp&nbsp&nbsp<select id="CQuantity" class="exportsort">
+<option value="0">Exclude</option>
+<option value="1">Order 1</option>
+<option value="2">Order 2</option>
+<option value="3">Order 3</option>
+<option value="4">Order 4</option>
+<option value="5">Order 5</option>
+<option value="6">Order 6</option>
+<option value="7">Order 7</option>
+<option value="8">Order 8</option>
+<option value="9">Order 9</option>
+<option value="10">Order 10</option>
+<option value="11">Order 11</option>
+<option value="12">Order 12</option>
+<option value="13">Order 13</option><option value="14">Order 14</option><option value="15">Order 15</option><option value="16">Order 16</option>
+<option value="17">Order 17</option>
+<option value="18">Order 18</option>
+</select>
+</br>
+
+
+<div> <label class="sortl1">Hyperlink Store Url To Buy Price:</label><div
+id="HstoreUrl" class="rwizard-switch12"><div
+class="rwizard-helper"></div></div></div>
+<br/><div> <label class="sortl1">Hyperlink Amazon Url To Sell Price:</label><div
+id="HamazonUrl" class="rwizard-switch12"><div
+class="rwizard-helper"></div></div></div>
+</div>
+<div id="tabs-5">
+<label>Ideal ROI %</label><br/> <input
+type="number" id="IdealRoi" value="" value=""
+pattern="[0-9]+([\.,][0-9]+)?" step="0.01"/><br/> <label>Ideal Profit</label><br/> <input type="number" id="IdealProfit" value=""
+pattern="[0-9]+([\.,][0-9]+)?" step="1"/><br/></div>
+
+<div id="tabs-6">
+<br>
+<br>
+<div class="UKContent">
+<div class="UKButtonDiv">
+<label style="font-size: 31px;font-weight: normal;">UK & EU</label></br>
+<a class="NewsButtonActSetting" style="width:156px;font-size: 14px;font-weight: bolder;background-color: rgb(24, 193, 135);color:white;" target="_blank"  href="https://sellercentral.amazon.co.uk/gp/mws/registration/register.html?signInPageDisplayed=1&devAuth=1&developerName=FBAMULTITOOL&devMWSAccountId=284186314856">GET MWS KEYS</a>
+<br>
+<div class="DetailsSet">
+Developer's Name: FBAMULTITOOL
+</div>
+<div class="DetailsSet">
+Developer's Account Number: 284186314856<br>
+</div>
+</div>
+
+<br>
+<div class="UKButtonDiv">
+<label style="font-size: 31px;font-weight: normal;">USA</label></br>
+<a class="NewsButtonActSetting" style="width:156px;font-size: 14px;font-weight: bolder;background-color: rgb(24, 193, 135);color:white;" target="_blank"  href="https://sellercentral.amazon.com/gp/mws/registration/register.html?signInPageDisplayed=1&devAuth=1&developerName=FBAMULTITOOL&devMWSAccountId=787941128683">GET MWS KEYS</a>
+<br>
+<div class="DetailsSet">
+Developer's Name: FBAMULTITOOL<br>
+</div>
+<div class="DetailsSet">
+Developer's Account Number: 787941128683<br>
+</div>
+</div>
+<br>
+<br>
+<label>MWS TOKEN FOR UK</label><br/> <input
+type="text" id="MWSTOKENUK" value="" /><br/> <label>SELLER ID FOR UK</label><br/> <input type="text" id="MWSSELLERIDUK" value=""/><br/>
+<br/><br/><label>MWS TOKEN FOR USA</label><br/> <input
+type="text" id="MWSTOKENUSA" value="" /><br/> <label>SELLER ID FOR USA</label><br/> <input type="text" id="MWSSELLERIDUSA" value=""/><br/>
+</div>
+
+</div>
+
+</div> <input
+type="button" value="Save" id="save-settings" class="NewsButtonAct" style="width:200px;background-color: rgb(24, 193, 135);color:white;"/></div>
+<div id="overlay"></div><div class="loaderOptionPage"></div></body></html>

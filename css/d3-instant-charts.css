@@ -1,0 +1,124 @@
+﻿/* X主軸線 */
+svg.d3-instant-charts .axis-x path {
+    stroke: #333333;
+    stroke-width: 3px;
+}
+
+/* X軸刻度線 */
+svg.d3-instant-charts .axis-x line {
+    stroke: #333333;
+    stroke-width: 2px;
+}
+
+/* X軸刻度文字 */
+svg.d3-instant-charts .axis-x > g > text {
+    font: 0.8rem "Courier New", "微軟正黑體", "Microsoft JhengHei", Arial;
+    fill: #333333;
+    font-weight: 800;
+}
+
+/* Y主軸線 */
+svg.d3-instant-charts .axis-y path {
+    stroke: #333333;
+    stroke-width: 3px;
+}
+
+/* Y軸刻度線 */
+svg.d3-instant-charts .axis-y line {
+    stroke: #333333;
+    stroke-width: 2px;
+}
+
+/* Y軸刻度文字 */
+svg.d3-instant-charts .axis-y > g > text, svg.d3-instant-charts .temp-text {
+    font: 0.8rem "Courier New", "微軟正黑體", "Microsoft JhengHei", Arial;
+    fill: #333333;
+    font-weight: 800;
+}
+
+svg.d3-instant-charts .grid-x line {
+    stroke: #CCCCCC;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 2;
+    shape-rendering: crispEdges;
+}
+
+svg.d3-instant-charts .grid-x path {
+    stroke-width: 0;
+}
+
+svg.d3-instant-charts .grid-y line {
+    stroke: #CCCCCC;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 2;
+    shape-rendering: crispEdges;
+}
+
+svg.d3-instant-charts .grid-y path {
+    stroke-width: 0;
+}
+
+svg.d3-instant-charts .bar {
+    stroke: #3379c4;
+    stroke-width: 0;
+    fill: #65a7ef;
+}
+
+svg.d3-instant-charts .bar-text {
+    fill: #004187;
+    font-size: 10px;
+}
+
+svg.d3-instant-charts .line {
+    fill: none;
+    stroke-width: 4;
+}
+
+svg.d3-instant-charts .axis path {
+    stroke: black;
+}
+
+
+svg.d3-instant-charts .legend rect {
+    fill: white;
+    stroke: black;
+    opacity: 0.8;
+}
+
+.d3-instant-charts-tooltip {
+    position: absolute;
+    text-align: center;
+    display: block;
+    color: #FFFFFF;
+    padding: 4px 8px;
+    background-color: #2c3e50;
+    border: 0;
+    font-size: 0.7rem;
+    line-height: 0.8rem;
+    border-radius: 5px;
+    pointer-events: none;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+}
+
+svg.d3-instant-charts .legend-layer {
+    stroke: #CCCCCC;
+    stroke-width: 1px;
+}
+
+    svg.d3-instant-charts .legend-layer rect {
+        stroke-width: 1px;
+        cursor: pointer;
+    }
+
+    svg.d3-instant-charts .legend-layer text {
+        stroke: #333333;
+        stroke-width: 1px;
+        font-size: 0.8rem;
+        font: 0.8rem "Courier New", "微軟正黑體", "Microsoft JhengHei", Arial;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }

@@ -1,0 +1,271 @@
+﻿html, body {
+  height: 100%;
+}
+
+.full-height {
+  height: 83%;
+}
+.full-height-no-header {
+  height: calc(100% - 45px);
+}
+
+*, *:focus, *:active {   
+  box-shadow: none !important;
+  outline: 0 none !important;
+}
+
+#maincontainer {
+    max-width: 400px;
+    border: solid 1px #f0f0f0;
+    display:block;
+    margin: 0 auto;
+}
+.KeepaButtonSelectSearch
+{
+	width:25px;
+	height:25px;
+}
+#FBAMTKeepaCloseButton {
+
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-align: center;
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    z-index: 9999;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+    #FBAMTKeepaCloseButton:hover {
+        color: white;
+    }
+#header {
+    background-color: #374d5b;
+    text-align:center;
+    position: relative;
+}
+#btnSearch
+{
+	    color: white;
+}
+.logoimage
+{
+	width:80%;
+	    margin-top: 28px;
+}
+#backlink {
+    position: absolute;
+    left: 10px;
+    color: white;
+    display: none;
+        margin-top: 4px;
+}
+#MainBody {
+    position:relative;
+    overflow: auto;
+}
+
+.headerwithcountry {
+    padding: 10px;
+    border-bottom: solid 1px #f0f0f0;
+    background: #374d5b;
+    color: white;
+}
+.fs-12 {
+    font-size: 12px;
+    height: 31px;
+}
+
+#lstSearchResults {
+    font-size: 13px;
+}
+.search-result-item:nth-child(odd) { background: azure; }
+a.title {
+    display:block;
+    color: #212529;
+    font-weight:bold;
+    margin: 0;
+    text-decoration:underline;
+}
+a.title:hover {
+    color: dodgerblue;
+}
+.item-image {
+    max-width: 125px;
+}
+.item-asin {
+    color: #212529;
+    text-decoration: underline;
+}
+.please-wait {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: #97c5ff;
+    font-size: 21px;
+    font-weight: normal;
+}
+
+#bbpIframe {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display:none;
+}
+
+/****************** RATING ***************/
+.stars-container {
+  display: inline-block;
+  font-size: 20px;
+  position: relative;
+  color: gray;
+}
+ 
+.stars-container > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: gold;
+  display:block;
+  overflow: hidden;  
+}
+
+.stars-container:before, .stars-container > span:before {
+  content: "★★★★★";
+}
+
+.bbs-header {
+    display: none !important;
+}
+
+/******** search-result-item-details *********/
+ul.search-result-item-details {
+    display:block;
+    padding:0;
+    margin:0;    
+}
+ul.search-result-item-details li {
+    display:block;
+    padding:0;
+    margin:0;    
+}
+
+/******** tooltip *********/
+.tooltip {
+  font-size: 13px;
+}
+.tooltip-inner {
+  color: #fff;
+  background-color: #59a9ff;
+}
+
+/******** flags *********/
+#flags {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.tooltip12 {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip12 .tooltiptext1 {
+  visibility: hidden;
+  width: 30%;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+.tooltip12:hover .tooltiptext1 {
+  visibility: visible;
+}
+.tooltip12 .tooltiptext1 {
+  width: 30%;
+  bottom: 60%;
+  left: 46%;
+  margin-left: -117px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+.tooltip12 .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip12:hover .tooltiptext {
+  visibility: visible;
+}
+.flag {
+    display: inline-block;
+    padding: 5px 7px;
+    background-color: #f0f0f0;
+    margin: 0 5px;
+    border: solid 1px #f0f0f0;
+    cursor: pointer;
+    line-height: 15px;
+    border-radius: 2px;
+}
+    .flag:hover, .flag.active {
+        background-color: #d5e9ff;
+        border: solid 1px #218cff;
+    }
+
+.flag span {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    margin-top: 5px;
+}
+
+.ellipsis {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box !important;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+}
+
+.item-sellprice {
+    color: green;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+}
+.search-result-item {
+    padding: 20px 10px;
+}
